@@ -26,3 +26,8 @@ jobs:
       - run: flutter test
       - run: flutter build apk --release
       - run: flutter build appbundle
+      - uses: ncipollo/release-action@v1
+          with:
+            artifacts: "release.tar.gz,foo/*.txt"
+            bodyFile: "body.md"
+            token: ${{ secrets.YOUR_GITHUB_TOKEN }}
