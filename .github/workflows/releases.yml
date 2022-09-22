@@ -30,7 +30,7 @@ jobs:
       - run: flutter test
       - run: flutter build apk --release
       - run: flutter build appbundle
-      - run: flutter build ios --release --no-codesign
+      - run: flutter build ipa --export-options-plist=ios/Runner/Info.plist
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/flutter-apk/*.apk"
